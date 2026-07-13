@@ -1,85 +1,95 @@
 # 🔗 URL Shortener
 
-A simple URL Shortener built using **Node.js**, **Express.js**, **MongoDB**, and **NanoID**. This application generates a unique short URL for long URLs and redirects users to the original website.
+A scalable URL Shortener REST API built using Node.js, Express.js, and MongoDB. This project follows a clean modular architecture with Controller-Service-DAO layers for better maintainability and scalability.
 
 ## 🚀 Features
 
-- Generate unique short URLs
-- Redirect to the original URL
-- Store URLs in MongoDB
-- REST API built with Express.js
-- Environment variable support using dotenv
+- Generate short URLs
+- Redirect to original URLs
+- MongoDB database integration
+- Layered architecture (Controller → Service → DAO)
+- Global Error Handling
+- Async Error Wrapper
+- NanoID-based unique short URLs
+- Clean and modular backend structure
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
 - NanoID
-- Dotenv
+- dotenv
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
-URL-SHORTNER/
+Backend/
 │
-├── Backend/
-│   ├── src/
-│   │   ├── config/
-│   │   └── models/
-│   ├── app.js
-│   ├── package.json
-│   └── .env
+├── src/
+│   ├── config/
+│   ├── controller/
+│   ├── dao/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── utils/
+│   └── app.js
 │
-├── Frontend/   (Coming Soon)
-│
+├── .env
+├── package.json
 └── README.md
 ```
 
 ## ⚙️ Installation
 
-### 1. Clone the repository
+Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/URL-SHORTNER.git
+git clone https://github.com/shobhit3130/URL_SHORTNER.git
 ```
 
-### 2. Navigate to the Backend
+Move to project directory
 
 ```bash
-cd URL-SHORTNER/Backend
+cd URL_SHORTNER/Backend
 ```
 
-### 3. Install dependencies
+Install dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Create a `.env` file
+Create a `.env` file
 
 ```env
+PORT=3000
 MONGO_URI=your_mongodb_connection_string
+APP_URL=http://localhost:3000
 ```
 
-### 5. Start the server
+Start the server
 
 ```bash
-node app.js
+npm start
 ```
 
-The server will start on:
+or
 
+```bash
+npm run dev
 ```
-http://localhost:3000
-```
+
+---
 
 ## 📌 API Endpoints
 
 ### Create Short URL
 
-```
+```http
 POST /api/create
 ```
 
@@ -91,34 +101,68 @@ Request Body
 }
 ```
 
+Response
+
+```json
+{
+  "success": true,
+  "shortUrl": "http://localhost:3000/abc12345"
+}
+```
+
+---
+
 ### Redirect
 
-```
-GET /:id
-```
-
-Example
-
-```
-http://localhost:3000/abc123
+```http
+GET /:shortUrl
 ```
 
-## 📅 Future Improvements
+Redirects the user to the original URL.
 
-- React Frontend
+---
+
+## 🏗 Architecture
+
+```
+Client
+   │
+   ▼
+Routes
+   │
+   ▼
+Controllers
+   │
+   ▼
+Services
+   │
+   ▼
+DAO
+   │
+   ▼
+MongoDB
+```
+
+---
+
+## 📈 Future Improvements
+
 - User Authentication (JWT)
-- Click Analytics
 - Custom Short URLs
 - QR Code Generation
-- Dashboard for URL Management
+- Analytics Dashboard
+- URL Expiration
+- Click Tracking
+- Rate Limiting
+- Swagger API Documentation
+- Docker Support
+
+---
 
 ## 👨‍💻 Author
 
 **Shobhit Gupta**
 
-- GitHub: https://github.com/shobhit3130
-- LinkedIn: www.linkedin.com/in/shobhit-gupta3130
+Backend Developer | Node.js | Express.js | MongoDB
 
----
-
-⭐ If you like this project, consider giving it a star!
+GitHub: https://github.com/shobhit3130
