@@ -19,3 +19,4 @@ const redirectFromShortUrl= wrapAsync(async(req,res)=>{
 
 
    module.exports={createShortUrl,redirectFromShortUrl};
+   
