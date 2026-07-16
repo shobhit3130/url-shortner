@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* Simple styling so the UI looks good without extra libs */
+.bb-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.bb-shortener-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.bb-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 14px;
+}
+
+.bb-form {
+  display: grid;
+  gap: 10px;
+}
+
+.bb-label {
+  font-weight: 600;
+}
+
+.bb-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  outline: none;
+}
+
+.bb-input:focus {
+  border-color: rgba(99, 102, 241, 0.8);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.bb-button {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bb-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.bb-error {
+  margin-top: 12px;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.bb-result {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.bb-result-label {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.bb-result-link {
+  display: block;
+  color: #2563eb;
+  word-break: break-all;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.bb-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.bb-copy {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
